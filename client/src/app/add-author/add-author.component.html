@@ -1,0 +1,23 @@
+<p>add-author works!</p>
+
+{{ newAuthor | json}}
+
+<button [routerLink] = "['']">All Authors</button>
+<form (submit) = "createAuthor()">
+	<div class="form-group">
+		<label for="newAuthor.name">Author Name</label>
+		<input type="text" name="newAuthor.name" [(ngModel)] = "newAuthor.name" class="form-control">
+		<span *ngIf="errors.name">{{errors.name.message}}</span>
+	</div>
+	<div class="form-group">
+		<label for="newAuthor.quote">Quote</label>
+		<input type="text" name="newAuthor.quote" [(ngModel)] = "newAuthor.quote" class="form-control">
+		<span *ngIf="errors.quote">{{errors.quote.message}}</span>
+	</div>
+	<input type="submit" value="Submit">
+</form>
+
+
+<div>
+	<router-outlet></router-outlet>	
+</div>

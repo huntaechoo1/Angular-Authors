@@ -1,0 +1,23 @@
+<p>all-authors works!</p>
+<button [routerLink] = "['/new']">Add New Author</button>
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">Author</th>
+			<th scope="col">Quote</th>
+			<th scope="col">Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let author of allAuthors">
+			<th scope="col">{{author.name}}</th>
+			<td>{{author.quote}}</td>
+			<td><button [routerLink] = "['/edit', author._id]">Edit Author</button>
+			<button (click) = "clickDelete(author._id)">Delete Author</button></td>
+		</tr>
+	</tbody>
+</table>
+
+<div>
+	<router-outlet></router-outlet>	
+</div>

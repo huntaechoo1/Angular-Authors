@@ -1,0 +1,22 @@
+<p>edit-author works!</p>
+
+<button [routerLink] = "['']">All Authors</button>
+
+<form (submit) = "updateAuthor(oneAuthor._id)">
+	<div class="form-group">
+		<label for="oneAuthor.name">Author Name</label>
+		<input type="text" name="oneAuthor.name" [(ngModel)] = "oneAuthor.name" class="form-control" value="oneAuthor.name">
+		<span *ngIf="error2s.name">{{error2s.name.message}}</span>
+	</div>
+	<div class="form-group">
+		<label for="oneAuthor.quote">Quote</label>
+		<input type="text" name="oneAuthor.quote" [(ngModel)] = "oneAuthor.quote" class="form-control" value="oneAuthor.name">
+		<span *ngIf="error2s.quote">{{error2s.quote.message}}</span>
+	</div>
+	<input type="submit" value="Submit">
+	<button [routerLink] = "['']">Cancel</button>
+</form>
+
+<div>
+	<router-outlet></router-outlet>	
+</div>
